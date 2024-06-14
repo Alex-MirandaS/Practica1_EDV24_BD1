@@ -1,0 +1,108 @@
+
+--ANALISIS CASO 2--
+
+-- DEPARTAMENTOS
+    -ID_Departamento PK
+    -departamento
+
+-- MUNICIPIOS
+    -ID_Municipio PK
+    -ID_Departamento FK
+    -municipio
+
+-- Vehículos
+    -Placa PK
+    -Color
+    -Marca
+    -Modelo
+    -Kilometraje
+    -Año
+    -Transmisión (automática/mecánica)
+    -Num_Puertas
+    -Condición (Usado/Nuevo)
+
+-- R_Prov_AutoS
+    -ID_R_Prov_Auto PK
+    -ID_Proveedor FK
+    -ID_Vehiculo FK
+
+-- SUCURSALES
+    -ID_Sucursal PK
+    -nombre
+    -direccion
+    -telefono
+    -web
+    -ID_Municipio FK
+
+-- INVENTARIOs
+    -ID_Inventario PK
+    -ID_Sucursal FK
+    -ID_Vehiculo FK
+    -Vendido BOOL
+
+-- T_PAGOS
+    -ID_T_Pago PK
+    -tipo_Pago
+
+-- TRANSACCIONES
+    -ID_Transaccion PK
+    -ID_Vehiculo FK
+    -ID_Sucursal FK
+    -T_Pago FK
+    -Venta
+    -Monton
+    -Fecha
+
+-- CLIENTES
+    -DPI PK
+    -nombre
+    -direccion
+    -telefono 
+    -celular NOT NULL
+    -email NOT NULL
+    -nit NOT NULL
+
+-- TARJETAS_C
+    -Num_Tarjeta PK
+    -ID_Cliente FK
+    -CVV
+    -Fecha_Exp
+
+-- DET_VENTAS
+    -ID_Det_Ventas PK
+    -ID_Transaccion FK
+    -ID_Empleado FK
+    -hora
+
+-- DET_TRANS_CRED
+    -ID_Det_Transaccion PK
+    -ID_Transaccion FK
+    -Banco
+    -Num_Tarjeta
+
+-- DESCUENTOS
+    -ID_Descuento FK
+    -ID_Transaccion FK
+    -porcentaje
+    -razon
+
+-- PROVEEDORES
+    -ID_Proveedor PK
+    -nombre
+    -direccion
+    -telefono 
+    -email NOT NULL
+    -empresa NOT NULL
+
+-- EMPLEADOS
+    -DPI PK
+    -nombre
+    -nit
+    -telefono
+    -sueldo
+
+-- BITACORA_EMP
+    -ID_BITACORA_EMP PK
+    -ID_Sucursal FK
+    -ID_Empleado FK
+    -Fecha
