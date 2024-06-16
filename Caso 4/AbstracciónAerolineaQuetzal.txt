@@ -1,0 +1,170 @@
+--ANALISIS CASO 4--
+
+--AVION
+    - matricula (VARCHAR) PK
+    - modelo
+    - num_Asiento_P_Clase
+    - num_Asiento_EC_Clase
+    - num_Asiento_EJ_Clase
+    - galones_G
+    - distancia_M
+    - altura_M
+
+--PAISES
+    - ID_Pais PK
+    - pais
+
+--LUGARES
+    - ID_Lugar PK
+    - ID_Pais FK
+    - cuidad
+
+--T_VUELO
+    - ID_T_Vuelo PK
+    - tipo_Vuelo
+
+--VUELO
+    - num_Vuelo PK
+    - ID_Avion FK
+    - ID_L_Origen FK
+    - ID_L_Destino FK
+    - ID_T_Vuelo FK
+    - fecha_Despegue
+    - hora_Despegue
+    - fecha_Aterrizaje
+    - hora_Aterrizaje
+    - num_Pasajeros
+
+--MANTENIMIENTO
+    - ID_Mantenimiento PK
+    - ID_Avion FK
+    - fecha_U_Mant
+    - fecha_P_Mant
+
+--T_MANTENIMIENTO
+    - ID_T_Mantenimiento PK
+    - tipo
+
+--R_MANTENIMEINTO (EQUIPO DE 8)
+    - ID_R_Mantenimiento
+    - fecha
+    - hora 
+    - observaciones
+
+--PUESTOS
+    - ID_Puesto PK
+    - puesto
+
+--JORNADAS
+    - ID_Jornada PK
+    - jornada
+
+--HORARIOS
+    - ID_Horario PK
+    - ID_Jornada FK
+    - tiempo
+    - hora_Entrada
+    - hora_Salida
+
+--EMPLEADOS
+    - cui PK
+    - ID_Puesto FK
+    - ID_Horario FK
+    - nombre
+    - apellido
+    - fecha_Nacimiento
+    - fecha_Contratacion
+    - direccion
+    - edad
+    - email
+    - telefono
+
+--IDIOMAS
+    - ID_Idioma PK
+    - ID_Empleado FK
+    - idioma
+
+--RAZONES_R
+    - ID_Razon_R
+    - razon
+
+--RETIROS
+    - ID_Despido PK
+    - ID_Empleado FK
+    - ID_Razon_R FK
+    - fecha_Retiro
+    - detalles
+
+--MOTIVOS_I
+    - ID_Motivo_I PK
+    - motivo
+
+--INASISTENCIAS
+    - ID_Inasistencia PK
+    - ID_Empleado FK
+    - ID_Motivo_I FK
+    - fecha
+    - detalles
+
+--ING_EGR
+    - ID_Ing_Egr PK
+    - ID_Empleado FK
+    - hora_Ingreso
+    - hora_Egreso
+    - fecha
+
+--CODIGO_P
+    - ID_Codigo_P PK
+    - codigo
+
+--CLIENTE
+    - cui PK
+    - num_Pasaporte
+    - nombre
+    - apellido
+    - fecha_Nacimiento
+    - ID_Codigo_P
+    - direccion
+    - edad
+    - email
+    - telefono
+
+--F_PAGO
+    - ID_F_Pago PK
+    - forma_Pago
+
+--CLASES
+    - ID_Clase PK
+    - clase 
+
+--BOLETOS
+    - ID_Boleto PK 
+    - ID_Cliente FK
+    - ID_Vuelo FK
+    - ID_F_Pago FK
+    - ID_Clase FK
+    - monto
+    - fecha_viaje
+    - fecha_regreso
+    - peso_Equipaje
+
+--PAGOS
+    - ID_Pagos PK
+    - ID_Boleto FK
+    - num_Tarjeta 
+
+--RESTRICCIONES
+    - ID_Restriccion PK
+    - restriccion
+
+--R_RESTRICCIONES
+    - ID_R_Restriccion PK
+    - ID_Restriccion FK
+    - ID_Clase FK
+
+--R_TRIPULACION_VUELO
+    - ID_R_Tripulacion PK
+    - ID_Vuelo FK
+    - ID_Empleado FK
+
+ 
