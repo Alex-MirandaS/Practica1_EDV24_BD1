@@ -1,0 +1,161 @@
+--ANALISIS CASO 3--
+
+-- T_BODEGA
+    - ID_T_Bodega PK
+    - tipo
+
+-- T_PARTES
+    - ID_T_Parte PK
+    - tipo
+
+-- BODEGAS
+    - num_Bodega PK
+    - ID_Encargado FK
+    - ID_T_Bodega FK
+    - direccion
+
+-- PARTES
+    - codigo PK
+    - ID_T_Parte FK
+    - nombre
+    - color
+    - garantia
+    - precio
+
+-- PAISES
+    - ID_Pais PK
+    - pais
+
+-- PROVEEDORES
+    - ID_Proveedor PK
+    - nombre
+    - telefono
+    - compania
+    - ID_Pais FK
+
+-- COMP_PARTES
+    - ID_Comp_Partes PK
+    - ID_Parte FK
+    - ID_Proveedor FK
+    - cantidad
+
+-- INVENTARIO_PART
+    - ID_Inventario PK
+    - ID_Parte FK
+    - ID_Bodega FK
+    - stock
+
+-- PRODUCTOS (debio de pasar por varias etapas)
+    - codigo PK
+    - ID_Empleado FK
+    - ID_Puesto FK
+    - nombre
+    - marca
+    - fecha
+    - hora
+    - precio
+
+-- INVENTARIO_PROD
+    - ID_Inventario PK
+    - ID_Producto FK
+    - ID_Bodega FK
+    - stock
+
+-- ARMADO_P
+    - ID_Amado_P PK
+    - ID_Producto FK
+    - costo_Fab
+    - costo_Ver_Est
+    - costo_Partes
+
+-- Partes_Armado_P
+    - ID_Partes_Armado_P PK
+    - ID_Amado_P FK
+    - ID_Parte FK
+    - ID_Etapa FK
+
+-- PUESTOS
+    - ID_Puesto PK
+    - puesto 
+
+-- PLANTA
+    - ID_Planta PK
+    - planta
+
+-- T_L_Ensamblaje
+    - ID_T_L_Ensamblaje PK
+    - tipo
+
+-- L_ENSAMBLAJE
+    - ID_L_Ensamblaje PK
+    - ID_Planta FK
+    - ID_T_L_Ensamblaje FK
+    - ID_Producto FK
+    - ID_Encargado FK
+
+-- R_P_T_L_ENSAMBLAJE
+    - ID_R_P_T_L_Ensamblaje PK
+    - ID_L_Ensamblaje PK
+    - ID_Puesto
+
+-- EMPLEADOS
+    - codigo PK
+    - nombre 
+    - direccion
+    - telefono
+    - email
+
+-- T_JORNADAS
+    - ID_T_Jornada PK
+    - jornada
+
+-- HORARIOS
+    - ID_Horario PK
+    - ID_T_Jornada FK
+    - tiempo
+    - hora_Entrada
+    - hora_Salida
+
+-- HORARIOS_L_ENSAMBLAJE
+    - R_P_T_L_ENSAMBLAJE PK
+    - ID_Empleado FK
+    - ID_Horario FK
+    - pago
+
+-- ESTADOS
+    - ID_Estado PK
+    - estado
+
+-- ETAPAS
+    - ID_Etapa PK
+    - ID_Estado FK
+    - costo
+
+-- RECLAMOS
+    - ID_Reclamo PK
+    - ID_Comp_Partes FK
+    - detalles
+
+-- CLIENTES
+    - ID_Cliente PK
+    - nombre
+    - direccion
+    - ID_Pais FK
+
+-- PEDIDOS
+    - ID_Pedido PK
+    - ID_Producto FK
+    - ID_Cliente FK
+    - adelanto
+
+-- SOPORTE_TECNICO
+    - ID_S_Tecnico PK
+    - ID_Cliente FK
+    - ID_Producto
+    - hora
+    - fecha
+
+
+
+
+
