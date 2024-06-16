@@ -1,0 +1,82 @@
+--ANALISIS CASO 5--
+
+--EMPLEADOS
+    - dpi PK
+    - ID_Puesto FK
+    - ID_Departamento FK
+    - nombre
+    - apellidos
+    - fecha_Nacimiento
+    - fecha_Inicio_Labor
+    - edad
+    - telefono
+    - direccion
+    - salario
+
+--PUESTOS
+    - ID_Puesto PK
+    - puesto
+
+--AREAS
+    - ID_Area PK
+    - area
+
+--DEPARTAMENTOS
+    - ID_Departamento PK
+    - ID_Area FK
+    - departamento
+
+--FUNCIONES
+    - ID_Funcion PK
+    - ID_Departamento FK
+    - funcion
+
+--SEGUROS
+    - ID_Seguro PK
+    - seguro
+
+--CLIENTES
+    - cui PK
+    - nombre
+    - apellido
+    - fecha_Nacimiento
+    - telefono
+    - direccion
+    - edad
+    - email
+
+--POLIZAS
+    - codigo_Poliza PK
+    - ID_Empleado FK
+    - ID_Cliente FK
+    - ID_Seguro FK
+    - fecha_Inicio
+    - fecha_Final
+    - monto
+    - frecuencia_Pago
+
+--HISTORIAL_LLAMADAS
+    - ID_Llamada PK
+    - ID_Empleado FK
+    - ID_Seguro FK
+    - nombre_Llamante
+    - numero_Telefonico
+    - fecha_Llamada
+    - hora_Llamada
+    - duracion_Llamada
+
+--PAGOS
+    - ID_Pago PK
+    - ID_Poliza FK
+    - ID_Empleado FK
+    - ID_Cliente FK
+    - tarifa
+    - mora
+    - monto
+    - forma_Pago
+    - fecha_Pago
+
+--PAPELERIA
+    - ID_Papeleria PK
+    - ID_Seguro FK
+    - documento
